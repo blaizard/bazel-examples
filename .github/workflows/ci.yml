@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: "toolchain-arm64-gcc"
+      run: |
+        cd toolchain-arm64-gcc
+        ../bazel build ... --platforms=toolchain_arm64_gcc
+
+    - name: "toolchain-arm64-gcc-docker"
+      run: |
+        cd toolchain-arm64-gcc-docker
+        ../bazel build ... --platforms=toolchain_arm64_gcc_docker
