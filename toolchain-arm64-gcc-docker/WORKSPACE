@@ -1,0 +1,3 @@
+load("//toolchain_arm64_gcc_docker:defs.bzl", "install_toolchain_arm64_gcc_docker")
+
+install_toolchain_arm64_gcc_docker()
