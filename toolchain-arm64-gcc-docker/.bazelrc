@@ -1,4 +1,8 @@
+try-import ../.bazelrc.local
+
+# Enable CC toolchain resolution.
 build --incompatible_enable_cc_toolchain_resolution
 
+# Enable docker sandbox.
 build --experimental_enable_docker_sandbox
 build --spawn_strategy=docker,sandboxed

@@ -10,12 +10,16 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
+    - name: "Setup"
+      run: |
+        cp ../.tools/.bazelrc.local .
+
     - name: "toolchain-arm64-gcc"
       run: |
         cd toolchain-arm64-gcc
-        ../bazel build ... --platforms=toolchain_arm64_gcc
+        ../.tools/bazel build ... --platforms=toolchain_arm64_gcc
 
     - name: "toolchain-arm64-gcc-docker"
       run: |
         cd toolchain-arm64-gcc-docker
-        ../bazel build ... --platforms=toolchain_arm64_gcc_docker
+        ../.tools/bazel build ... --platforms=toolchain_arm64_gcc_docker
