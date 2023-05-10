@@ -12,7 +12,7 @@ jobs:
 
     - name: "Setup"
       run: |
-        cp ../.tools/.bazelrc.local .
+        cp .tools/.bazelrc.local .
 
     - name: "toolchain-arm64-gcc"
       run: |
