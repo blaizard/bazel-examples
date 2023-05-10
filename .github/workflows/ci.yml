@@ -12,14 +12,14 @@ jobs:
 
     - name: "Setup"
       run: |
-        cp .tools/.bazelrc.local .
+        cp .github/.bazelrc.local .
 
     - name: "toolchain-arm64-gcc"
       run: |
         cd toolchain-arm64-gcc
-        ../.tools/bazel build ... --platforms=toolchain_arm64_gcc
+        ../.github/bazel build ... --platforms=toolchain_arm64_gcc
 
     - name: "toolchain-arm64-gcc-docker"
       run: |
         cd toolchain-arm64-gcc-docker
-        ../.tools/bazel build ... --platforms=toolchain_arm64_gcc_docker
+        ../.github/bazel build ... --platforms=toolchain_arm64_gcc_docker
